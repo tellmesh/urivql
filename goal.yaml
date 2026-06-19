@@ -16,7 +16,7 @@ project:
   name: urivql
   type:
   - python
-  description: ocr:// URI capability pack for urisys-node
+  description: vql:// URI capability pack for urisys-node
 versioning:
   strategy: semver
   files:
@@ -251,6 +251,19 @@ registries:
   npm:
     url: https://registry.npmjs.org/
     token_env: NPM_TOKEN
+publishing:
+  enabled: true
+  registries:
+  - pypi
+  fallback:
+    github_release:
+      enabled: true
+      owner: tellmesh
+      repo: ''
+      repo_map: {}
+      token_env: GITHUB_TOKEN
+      skip_pypi_retries_on_block: true
+      asset_glob: dist/*
 hooks:
   pre_commit: ''
   post_commit: ''
